@@ -32,4 +32,8 @@ public class Tarefa {
     public String getAtualizadoTarefa() {
         return atualizadoTarefa;
     }
+
+    public void setProgressoTarefa(String progressoTarefa) {
+        this.progressoTarefa = progressoTarefa;
+    }
 }
