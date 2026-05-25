@@ -42,19 +42,23 @@ public class Main {
 
                     System.out.println("Tarefa adicionada com sucesso!");
                     String criadoTarefa = LocalDate.now().toString();
-                    String AtualizadoTarefa = LocalDate.now().toString();
+                    String atualizadoTarefa = LocalDate.now().toString();
 
-                    Tarefa tarefaadd = new Tarefa(idTarefa, descricaoTarefa, progressoTarefa, criadoTarefa, AtualizadoTarefa);
+                    Tarefa tarefaadd = new Tarefa(idTarefa, descricaoTarefa, progressoTarefa, criadoTarefa, atualizadoTarefa);
                     tarefa.add(tarefaadd);
                 break;
 
                 case 2:
-                    for(Tarefa t : tarefa) {
-                        System.out.println("Tarefa: " + t.getIdTarefa());
-                        System.out.println("Descricao: " + t.getDescricaoTarefa());
-                        System.out.println("Progresso: " + t.getProgressoTarefa());
-                        System.out.println("Data criação: " + t.getCriadoTarefa());
-                        System.out.println("Atualizado: " + t.getAtualizadoTarefa() + "\n");
+                    if (tarefa.isEmpty()) {
+                        System.out.println("Nenhuma tarefa foi adicionada!");
+                    } else {
+                        for (Tarefa t : tarefa) {
+                            System.out.println("Tarefa: " + t.getIdTarefa());
+                            System.out.println("Descricao: " + t.getDescricaoTarefa());
+                            System.out.println("Progresso: " + t.getProgressoTarefa());
+                            System.out.println("Data criação: " + t.getCriadoTarefa());
+                            System.out.println("Atualizado: " + t.getAtualizadoTarefa() + "\n");
+                        }
                     }
                 break;
 
@@ -133,7 +137,7 @@ public class Main {
                                 System.out.println("Digite novo progresso da tarefa: (Pendente/Finalizado)");
                                 t.setProgressoTarefa(sc.nextLine());
                             } else {
-                                System.out.println("Remoção cancelada!");
+                                System.out.println("Atualização cancelada!");
                             }
                             break;
                         }
